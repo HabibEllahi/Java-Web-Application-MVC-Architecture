@@ -1,9 +1,20 @@
 @charset "UTF-8";
 
+body{
+	background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/skyscraper.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 1;
+}
+
 h1{
 	text-align: center;
 	text-shadow: 4px 4px 7px blue;	
 	font-style: italic;
+}
+
+h3{
+	color: green;
 }
 
 table{
@@ -52,7 +63,6 @@ input[type="reset"]{
 	padding: 7px 7px;
 	border-radius: 15px;
 }
-
 
 select{
 	padding: 5px;

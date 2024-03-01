@@ -6,26 +6,28 @@
 	<title>Página del Administrador</title>
 	<link rel = "stylesheet" href = "estilo.css">
 	<script>
-		function enviarFormulario(){
-			window.alert("Se ha enviado el formulario correctamente!");
-		}
-		
 		function compruebaCampos(){
 			var r = true;
 			var precio = document.getElementById("precio");
 			var description = document.getElementById("description");
 
-			if(description.value == ''){
+			if(description.value == '' && precio.value == ''){
 				description.style.backgroundColor  = "yellow";
+				precio.style.backgroundColor = "yellow";
+				window.alert("Campo no válido.");
+				r = false;
+			}else if(description.value == ''){
+				description.style.backgroundColor  = "yellow";
+				window.alert("Campo no válido.");
 				r = false;
 			}else if(precio.value == ''){
 				precio.style.backgroundColor = "yellow";
+				window.alert("Campo no válido.");
 				r = false;
 			}else if(isNaN(precio.value)){
 				window.alert("El campo del precio debe ser un numero, por favor.");
 				r = false;
 			}else{
-				window.alert("Los campos de descripción y precio son válidos!");
 				r = true;
 			}
 			return r;			
@@ -36,9 +38,9 @@
 <body>
 	<h1>Formulario de productos del Administrador</h1>
 	<!-- El autocomplete para que se borren los datos de input previos-->
-	<form autocomplete = "off" action = "https://labtel.ehu.eus/cgi-bin/echo.py" onsubmit="return compruebaCampos();" method="post">
+	<form autocomplete = "off" action = "ValidacionFormulario" onsubmit="return compruebaCampos();" method="post">
 		<label for = "tipo">Seleccione el tipo: </label>
-		<select id = "tipo" name = "">
+		<select id = "tipo" name = "tipo">
 			<option value = "\">...</option>
 			<option value = "Memoria">Memoria</option>
 			<option value = "Pantalla">Pantalla</option>
@@ -46,13 +48,13 @@
 			<option value = "Cargadores">Cargadores</option>
 		</select>
 		
-		<label for = "descripción">Descripción del producto: </label>
+		<label for = "description">Descripción del producto: </label>
 		<input type = "text" id = "description" name = "description">
 		
-		<label for = "precio">Introduzca el precio: </label>
+		<label for = "precio">Introduzca el precio (€): </label>
 		<input type = "text" id = "precio" name = "precio">
 		
-		<input type = "submit" value = "Enviar" onclick = "enviarFormulario()">
+		<input type = "submit" value = "Enviar">
 		<input type = "reset" value = "Reset">
 	</form>
 

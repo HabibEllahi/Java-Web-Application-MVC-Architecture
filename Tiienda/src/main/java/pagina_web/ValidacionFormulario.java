@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Administrador")
-public class Administrador extends HttpServlet {
+@WebServlet("/ValidacionFormulario")
+public class ValidacionFormulario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		respuestaHtml(response, new VistaError());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		VistaResultado vistaRsltd = new VistaResultado(request);//recogemos request para obtener los parametros del POST en la clase VR
+		respuestaHtml(response, vistaRsltd);
 	}
 	
 	private void respuestaHtml(HttpServletResponse response, Vista vista) throws IOException{
