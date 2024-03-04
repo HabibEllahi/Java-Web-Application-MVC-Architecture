@@ -1,4 +1,4 @@
-package pagina_web;
+package pagina_web_vista;
 
 public class Utilidades {
 	public static final String DOCTYPE="<!DOCTYPE html>";
@@ -8,7 +8,7 @@ public class Utilidades {
 		StringBuilder str =  new StringBuilder();
 		str.append("<html>\n");
 		str.append("<head>\n");
-		str.append("<meta charset=\"utf-8\">\n");
+		str.append("<meta charset=\"UTF-8\">\n");
 		str.append("<title>");
 		str.append(tit);
 		str.append("</title>\n");

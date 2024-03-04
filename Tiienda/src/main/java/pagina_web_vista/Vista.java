@@ -1,4 +1,4 @@
-package pagina_web;
+package pagina_web_vista;
 
 import java.io.PrintWriter;
 

@@ -1,27 +1,25 @@
-package pagina_web;
+package pagina_web_vista;
 
 import java.io.PrintWriter;
 
-import javax.servlet.http.HttpServletRequest;
-
 public class VistaResultado implements Vista{
-	private HttpServletRequest request;
+	private String mensaje;
 	
-	//builder para recibir el request de la clase ValidacionFormulario
-	public VistaResultado(HttpServletRequest request) {
-		this.request = request;
+	//builder para "recibir" el mensaje
+	public VistaResultado(String mensaje) {
+		this.mensaje = mensaje;
 	}
 
 	@Override
 	public void print(PrintWriter pw) {
-		Operaciones op = new Operaciones(request);
-		String mensaje = op.generaMensaje();
-		
 		pw.println(Utilidades.DOCTYPE);
 		pw.println(Utilidades.headConTitleStyle("Resultado", "estilo.css"));
 		pw.println("<body>");
 		pw.println("<h1>Resultado de la operación</h1>");
 		pw.println("<h3>"+ mensaje + "</h3>");
+		pw.println("<form action=\"http://localhost:8080/Tiienda/administrador.html\" method =\"get\">");
+		pw.println("<input type=\"submit\" value=\"Volver\" id=\"vuelta\">");
+		pw.println("</form>");
 		pw.println(Utilidades.FIN);
 	}
 }
