@@ -1,6 +1,8 @@
 package pagina_web;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +33,10 @@ public class Operaciones {
 			if(!fichero.exists()) {
 				fichero.createNewFile();
 			}
+			
+			BufferedWriter bw = new BufferedWriter(new FileWriter(fichero, true));
+			bw.write("00001" + ", " + tipo + ", " + description + ", " + precio + "\n");
+			bw.close();
 		}catch(IOException ioe) {
 			
 		}
