@@ -43,24 +43,6 @@ The project is structured according to the MVC pattern:
 
 ---
 
-## 📂 Project Structure
-
-Tienda/
-├── src/
-│ └── main/
-│ ├── java/
-│ │ ├── controllers/
-│ │ ├── model/
-│ │ └── view/
-│ └── webapp/
-│ ├── administrator.html
-│ ├── usuario.html
-│ ├── estilo.css
-│ └── WEB-INF/
-│ └── web.xml
-
-
----
 
 ## 🚀 How to Run the Project
 
