@@ -49,8 +49,7 @@ The project is structured according to the MVC pattern:
 1. Import the project into **Eclipse** as an existing Java web project.
 2. Ensure **Apache Tomcat** is installed and configured in Eclipse.
 3. Deploy the application on the Tomcat server.
-4. Access the application via your web browser: http://localhost:8080/
-<project-name>/
+4. Access the application via your web browser: http://localhost:8080/project-name/
 
 
 ---
